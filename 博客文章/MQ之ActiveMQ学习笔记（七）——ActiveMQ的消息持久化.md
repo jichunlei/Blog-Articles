@@ -462,7 +462,7 @@
    　　　　useJournal="true" 
           useQuickJournal="true" 
           dataSource="#mysql_ds" 
-          dataDirectory="activemq-data">
+          dataDirectory="activemq-data" />
   </persistenceFactory>
   ```
 
