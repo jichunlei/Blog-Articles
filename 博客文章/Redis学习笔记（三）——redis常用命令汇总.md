@@ -1,8 +1,6 @@
-[TOC]
+# **一、常用管理命令**
 
-# 一、常用管理命令
-
-## 1.启动Redis
+## **1. 启动Redis**
 
 ```shell
 redis-server [--port 6379]
@@ -14,13 +12,13 @@ redis-server [--port 6379]
 redis-server [xx/xx/redis.conf]
 ```
 
-## 2.连接Redis
+## **2. 连接Redis**
 
 ```shell
 ./redis-cli [-h 127.0.0.1 -p 6379 -a 你的密码]
 ```
 
-## 3.停止Redis
+## **3. 停止Redis**
 
 ```shell
 redis-cli shutdown
@@ -32,7 +30,7 @@ kill redis-pid
 
 以上两句效果一样。
 
-## 4.测试Redis连通性
+## **4. 测试Redis连通性**
 
 ```shell
 127.0.0.1:6379> PING
@@ -41,7 +39,7 @@ PONG
 
 返回PONG则表示连接正常
 
-## 5.查看Redis版本信息
+## **5. 查看Redis版本信息**
 
 ```shell
 redis-server -v
@@ -51,15 +49,15 @@ redis-server -v
 redis-cli --version
 ```
 
-# 二、key操作命令
+# **二、key操作命令**
 
-## 1.获取所有键
+## **1. 获取所有键**
 
-* 语法：keys pattern
+* **语法**：`keys pattern`
 
-* pattern表示为匹配模式
+* **pattern表示为匹配模式**
 
-* 例：
+* **例**：
 
   ```shell
   127.0.0.1:6379> keys *
@@ -70,15 +68,15 @@ redis-cli --version
   5) "k4"
   ```
 
-  表示通配符，表示任意字符，会遍历所有键显示所有的键列表，时间复杂度O(n)，在生产环境不建议使用。
+  表示**通配符**，表示任意字符，会遍历所有键显示所有的键列表，时间复杂度O(n)，在生产环境不建议使用。
 
-## 2.获取键总数
+## **2. 获取键总数**
 
-* 语法：dbsize
+* **语法**：`dbsize`
 
-* 获取键总数时不会遍历所有的键，直接获取内部变量，时间复杂度O(1)
+* 获取**键总数**时不会遍历所有的键，直接获取内部变量，时间复杂度O(1)
 
-* 例：
+* **例**：
 
   ```shell
   127.0.0.1:6379> dbsize
@@ -87,11 +85,11 @@ redis-cli --version
 
 ## 3.查询键是否存在
 
-* 语法：exists key [key ...]
+* **语法**：`exists key [key ...]`
 
 * 查询查询多个，返回存在的个数
 
-* 例：
+* **例**：
 
   ```shell
   127.0.0.1:6379> EXISTS k1
@@ -106,9 +104,9 @@ redis-cli --version
 
 ## 4.删除键
 
-* 语法：del key [key ...]
+* **语法**：`del key [key ...]`
 
-* 可以删除多个，返回删除成功的个数。
+* 可以**删除多个**，**返回删除成功的个数**。
 
 * 例：
 
